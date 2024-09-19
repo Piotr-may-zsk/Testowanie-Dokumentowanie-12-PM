@@ -52,12 +52,15 @@ def policz_punkty(wyniki_rzutow):
 if __name__ == '__main__':
     print("Ile kostek chcesz rzucić?(3 - 10)")
     liczba_kostek = int(input())
-    czy_jeszcze_raz = True
-    while czy_jeszcze_raz:
-        wyniki_rzutow = rzuc_kostkami(liczba_kostek)
-        wypisz_wyniki(wyniki_rzutow)
-        suma_punktow = policz_punkty(wyniki_rzutow)
-        print(f'Liczba uzyskanych punktow: {suma_punktow}')
-        print("Jeszcze raz?")
-        decyzja = input()
-        czy_jeszcze_raz = decyzja == "t"
+    if liczba_kostek < 1:
+        print("Błędnie podana liczba kostek")
+    else:
+        czy_jeszcze_raz = True
+        while czy_jeszcze_raz:
+            wyniki_rzutow = rzuc_kostkami(liczba_kostek)
+            wypisz_wyniki(wyniki_rzutow)
+            suma_punktow = policz_punkty(wyniki_rzutow)
+            print(f'Liczba uzyskanych punktow: {suma_punktow}')
+            print("Jeszcze raz?")
+            decyzja = input()
+            czy_jeszcze_raz = decyzja == "t"
